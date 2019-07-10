@@ -138,7 +138,7 @@ int callMinion(int currentPlayer, int choice1, int choice2, struct gameState *st
 
 int callBaron(int choice1, int currentPlayer, struct gameState *state);
 
-void adjustHand(int player, struct gameState *state, int deckCounter);
+void adjustHand(int player, struct gameState *state, int deckCounter, int count);
 
 int condition1(int player, struct gameState *state, int score);
 
