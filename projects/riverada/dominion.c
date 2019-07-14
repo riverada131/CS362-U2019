@@ -5,6 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
+
 int compare(const void* a, const void* b) {
 	if (*(int*)a > *(int*)b)
 		return 1;
@@ -72,10 +73,10 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed, struct 
 
 	//set number of Victory cards
 	if (numPlayers == 2) {
-		stateAdjust(8, state)
+		stateAdjust(8, state);
 	}
 	else {
-		stateAdjust(12, state)
+		stateAdjust(12, state);
 	}
 
 	//set number of Treasure cards
@@ -99,7 +100,7 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed, struct 
 				}
 				break;
 			}
-			else {   //card is not in the set choosen for the game
+			else {   //card is not in the set chosen for the game
 				state->supplyCount[i] = -1;
 			}
 		}
@@ -357,20 +358,20 @@ int scoreFor(int player, struct gameState *state) {
 	int i, score = 0;
 	//score from hand
 	for (i = 0; i < state->handCount[player]; i++) {
-		score = condition1(player, state, score)
+		score = condition1(player, state, score, i);
 	}
 	//score from discard
 	for (i = 0; i < state->discardCount[player]; i++) {
-		score = condition1(player, state, score)
+		score = condition1(player, state, score, i);
 	}
 	//score from deck
 	for (i = 0; i < state->discardCount[player]; i++) {
-		score=condition1(player, state, score)
+		score = condition1(player, state, score, i);
 	}
 	return score;
 }
 
-int condition1(int player, struct gameState *state, int score) {
+int condition1(int player, struct gameState *state, int score, int i) {
 	if (state->discard[player][i] == curse) { score = score - 1; };
 	if (state->discard[player][i] == estate) { score = score + 1; };
 	if (state->discard[player][i] == duchy) { score = score + 3; };
@@ -568,13 +569,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	int nextPlayer = currentPlayer + 1;
 	int output;
 
-	int tributeRevealedCards[2] = { -1, -1 };
+	//int tributeRevealedCards[2] = { -1, -1 };
 	int temphand[MAX_HAND];// moved above the if statement
 	int drawntreasure = 0;
 	int cardDrawn;
 	int z = 0;// this is the counter for the temp hand
 	if (nextPlayer > (state->numPlayers - 1)) {
-		nextPlayer = 0;
+		nextPlayer = 0; 
 	}
 
 	//uses switch to select card and perform actions

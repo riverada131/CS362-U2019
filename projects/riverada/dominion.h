@@ -140,7 +140,7 @@ int callBaron(int choice1, int currentPlayer, struct gameState *state);
 
 void adjustHand(int player, struct gameState *state, int deckCounter, int count);
 
-int condition1(int player, struct gameState *state, int score);
+int condition1(int player, struct gameState *state, int score, int i);
 
 void stateAdjust(int inputValue, struct gameState *state);
 
