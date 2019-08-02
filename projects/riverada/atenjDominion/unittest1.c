@@ -128,7 +128,7 @@ int main(){
 	for (i = 0; i < numPlayers; i++) {
 		for (j = 0; j < numPlayers; j++) {
 			for (l = 0; l < numPlayers; l++) {
-				ret_value = callMinion(l, i, j, &testState, handPos);
+				ret_value = cardMinion(l, i, &testState, handPos, j);
 				printf("return value from function = %d \n", ret_value);
 			}
 		}

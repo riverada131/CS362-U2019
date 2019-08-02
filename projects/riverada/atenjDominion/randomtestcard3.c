@@ -112,7 +112,7 @@ int main() {
 			test_state.coins = 0;
 		}
 
-		callTribute(currentPlayer, next_player, &test_state);
+		cardTribute(&test_state, next_player, currentPlayer, &test_state);
 
 		for (j = 0; j < numPlayers; j++) {
 			printf("Player %d ", j + 1);

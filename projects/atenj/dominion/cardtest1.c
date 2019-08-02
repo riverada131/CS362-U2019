@@ -105,7 +105,7 @@ int main(){
 		for (j = 0; j < numPlayers; j++) {
 			for (l = 0; l < numPlayers; l++) {
 				for (m = 0; m < numPlayers; m++) {
-					ret_value = callMinion(l, i, j, &testState, m);
+					ret_value = cardMinion(l, i, &testState, m, j);
 				}
 			}
 			printf("coins = %d, expected = %d\n", testState.coins, actualState.coins + extra_coins * i);

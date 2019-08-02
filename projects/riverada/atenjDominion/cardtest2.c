@@ -109,7 +109,7 @@ int main(){
 		for (j = 0; j < numPlayers; j++) {
 			for (l = 0; l < numPlayers; l++) {
 				for (m = 0; m < numPlayers; m++) {
-					ret_value = callMine(i, j, l, &testState, m);
+					ret_value = cardMine(i, j, &testState, m, l);
 				}
 			}
 			printf("coins = %d, expected = %d\n", testState.coins, actualState.coins + extra_coins * i);

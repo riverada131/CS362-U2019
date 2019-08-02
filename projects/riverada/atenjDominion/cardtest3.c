@@ -105,7 +105,7 @@ int main(){
 
 	for (i = 0; i < numPlayers; i++) {
 		for (j = 0; j < numPlayers; j++) {
-			ret_value = callBaron(i, j, &testState);
+			ret_value = cardBaron(i, &testState, j);
 			//printf("return value from function = %d\n ", ret_value);
 			printf("coins = %d, expected = %d\n", testState.coins, actualState.coins + extra_coins * i);
 			printf("deck count = %d, expected = %d\n", *testState.deckCount, *actualState.deckCount + extra_cards);

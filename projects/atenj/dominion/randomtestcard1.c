@@ -124,7 +124,7 @@ int main() {
 			test_state.coins = 0;
 		}
 
-		callBaron(choice1, currentPlayer, &test_state);
+		cardBaron(choice1, &test_state, currentPlayer);
 
 		for (j = 0; j < numPlayers; j++) {
 			printf("Player %d ", j + 1);
