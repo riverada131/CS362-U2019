@@ -5,7 +5,8 @@
 
 char inputChar()
 {
-	int char_select = (rand() % (126 - 32 +1 )) + 32;
+	int char_select = (rand() % (126 - 32 + 1 )) + 32;
+	//int char_select = rand() % 126;
 	char temp = (char)char_select;
     return temp;
 }
@@ -20,6 +21,8 @@ char *inputString()
 	char temp_string[string_length];
 
 	for (i = 0; i < string_length - 1; i++) {
+		//int char_select = (rand() % (126 - 32 + 1)) + 32;
+		//int char_select = (rand() % (126 - 64 + 1)) + 122;
 		int char_select = (rand() % (116 - 101 + 1)) + 101;
 		char temp = (char)char_select;
 		temp_string[i] = temp;
